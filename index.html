@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name=" theme-color" content="#000">
+    <title>Tetris</title>
+    <style>
+        body {
+            background-color: #330033;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        .container {
+            align-self: center;
+        }
+        .game-container {
+          box-shadow: 0px 0px 56px -26px rgba(0,0,0,1);
+          background-color: #000b1f;
+        }
+        .menu
+        {
+            align-self: center;
+            font-size: 30px;
+            font-family: Arial; 
+            color: white;
+            float: left;
+            padding: 20px;
+        }
+        .newgame_btn
+        {
+          border: 2px #330066 solid;
+          background-color:#000b1f;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .newgame_btn:hover
+        {
+          border: 2px white solid;
+        }
+        .diff_btn
+        {
+          border: 2px #330066 solid;
+          background-color:#000b1f;
+          color: white;
+          padding: 10px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        .diff_btn:hover
+        {
+          border: 2px white solid;
+        }
+        p
+        {
+          padding-top: 50px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <div class="menu">
+            <center>
+            <button class="newgame_btn" id="new_game">Nowa gra</button>
+            <p>Poziom trudności:</p>
+            <button class="diff_btn" id="diff_easy">Łatwy</button>
+            <button class="diff_btn" id="diff_medium">Średni</button>
+            <button class="diff_btn" id="diff_hard">Trudny</button>
+            </center>
+            </div>
+            <canvas id="game" width="520" height="640"></canvas>
+        </div>
+    </div>
+    <script src="game.js"></script>
+    <script>
+      const game = new MainGame('#game');
+      game.run();
+    </script>
+</body>
+</html>
